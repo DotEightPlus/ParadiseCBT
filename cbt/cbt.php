@@ -9,12 +9,12 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
  ?>
 <!DOCTYPE html>
 <html>
-<title>De-Guide Light School | CBT</title>
+<title>Paradise Model School | CBT</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta charset="UTF-8">
-<meta name="description" content="De-Guide Light School | CBT">
-<meta name="keywords" content="De-Guide Light School | CBT">
+<meta name="description" content="Paradise Model School School | CBT">
+<meta name="keywords" content="Paradise Model School | CBT">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -22,7 +22,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
 <link rel="stylesheet" href="css/w3.css">
 
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="../logo.jpeg" />
+<link rel="icon" type="image/png" href="../logo.jpg" />
 <link rel="manifest" href="manifest.json">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -63,7 +63,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                         <div class="col-sm-4 col-lg-4">
                             <p><strong><?php echo strtoupper($data); ?></strong></p>
                             <br>
-                            <img src="../logo.jpeg">
+                            <img src="../logo.jpg">
                             <br><br>
                             <p>Full Name.:<strong> <?php echo $sur ?></strong></p>
                             <p>Your Exam ID.: <strong> <?php echo $e_id?></strong></p>
@@ -97,7 +97,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                     </div>
 
                 </div>
-                <p align="center">&copy; De-Guide Light | <span style="color: red;"> <a style="color: red"
+                <p align="center">&copy; Paradise Model School | <span style="color: red;"> <a style="color: red"
                             target="_blank" href="https://doteightplus.com"> DotEightPlus
                             <?php echo date("Y"); ?></a></span> </p>
             </div>

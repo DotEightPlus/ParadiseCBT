@@ -3,18 +3,18 @@
 <html lang="en">
 
 <head>
-    <title>De-Guide Light School | CBT</title>
+    <title>Paradise Model School | CBT</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
-    <meta name="description" content="De-Guide Light School | CBT">
-    <meta name="keywords" content="De-Guide Light School | CBT">
+    <meta name="description" content="Paradise Model School School | CBT">
+    <meta name="keywords" content="Paradise Model School | CBT">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="theme-color" content="#ffffff">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="../logo.jpeg" />
+    <link rel="icon" type="image/png" href="../logo.jpg" />
     <link rel="manifest" href="manifest.json">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -44,13 +44,13 @@
     <div class="container-contact100">
         <div class="wrap-contact100">
             <span class="contact100-form-symbol">
-                <img src="../logo.jpeg" alt="SYMBOL-MAIL">
+                <img src="../logo.jpg" alt="SYMBOL-MAIL">
             </span>
 
 
             <form class="contact100-form validate-form flex-sb flex-w">
                 <span class="contact100-form-title">
-                    De-Guide Light School CBT <?php echo date("Y"); ?>
+                    Paradise Model School CBT <?php echo date("Y"); ?>
                 </span>
 
                 <?php
@@ -93,8 +93,9 @@ while ($row = mysqli_fetch_row($result)) {
 		}
 		?>
             <br />
-            <p align="center">&copy; De-Guide Light | <span style="color: red;"> <a style="color: red" target="_blank"
-                        href="https://doteightplus.com"> DotEightPlus <?php echo date("Y"); ?></a></span> </p>
+            <p align="center">&copy; Paradise Model School | <span style="color: red;"> <a style="color: red"
+                        target="_blank" href="https://doteightplus.com"> DotEightPlus
+                        <?php echo date("Y"); ?></a></span> </p>
         </div>
 
     </div>
