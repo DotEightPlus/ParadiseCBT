@@ -48,11 +48,6 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
 
 <body>
 
-    <!-- Trigger the modal with a button -->
-    <button type="button" id="id01" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalt">Open
-        Modal</button>
-
-
     <div class="container-contact100" id="mens">
         <div class="wrap-contact100" style="width: 99%; border-radius: 20px 20px 20px 20px">
             <div class="jumbotron" style="margin-bottom: 0px; height: 1000px;">

@@ -55,7 +55,7 @@ $row = mysqli_fetch_array($rsl);
     <div class="container-contact100">
         <div class="wrap-contact100">
             <span class="contact100-form-symbol">
-                <img src="../logo.jpeg" alt="">
+                <img src="../logo.jpg" alt="">
             </span>
 
             <p style="color: red; font-size: 20px;"><b>READ THE FOLLOWING INSTRUCTIONS CAREFULLY</b></p>
@@ -86,8 +86,8 @@ $row = mysqli_fetch_array($rsl);
             </div>
 
             <br />
-            <p align="center">&copy; De-Guide Light | <span style="color: red;"> <a style="color: red" target="_blank"
-                        href="https://doteightplus.com"> DotEightPlus
+            <p align="center">&copy; Paradise Model School | <span style="color: red;"> <a style="color: red"
+                        target="_blank" href="https://doteightplus.com"> DotEightPlus
                         <?php echo date("Y"); ?></a></span> </p>
         </div>
 
