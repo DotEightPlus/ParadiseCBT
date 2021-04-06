@@ -747,7 +747,7 @@ confirm($resul);
 
 
 //display and random values from db
-$spl = "SELECT * FROM `$sbj` GROUP BY `question` ORDER BY RAND()"; 
+$spl = "SELECT * FROM  `".$sbj."` GROUP BY `question` ORDER BY RAND()"; 
 $rpsult = query($spl);
 while($row = mysqli_fetch_array($rpsult)) {
     
