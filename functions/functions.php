@@ -192,7 +192,7 @@ if(isset($_POST['catclass']) && isset($_POST['subject']) && isset($_POST['hour']
 	$minutes 	=   $_POST['minutes'];
 	$quess      = 	$_POST['quess'];
 	$instruct   =   $_POST['instruct'];
-	$conc 	 = 	$class."_".$subject;
+	$conc 	 = 	strtolower($class."_".$subject);
 
 
 	//check if table exit
@@ -274,7 +274,7 @@ if(isset($_POST['jssclass']) && isset($_POST['jsssubject']) && isset($_POST['jss
 	$jssminutes = 	$_POST['jssminutes'];
 	$jssquess   =   $_POST['jssquess'];
 	$jssedit   =   $_POST['jssedit'];
-	$conc 		 = 	$class."_".$subject;
+	$conc 		 = 	strtolower($class."_".$subject);
 
 
 	//check if table exit
@@ -358,7 +358,7 @@ if(isset($_POST['seniorclass']) && isset($_POST['seniorsubject']) && isset($_POS
 	$ssminutes	= 	$_POST['ssminutes'];
 	$ssquess    = 	$_POST['ssquess'];
 	$ssedit    = 	$_POST['ssedit'];
-	$conc 	 = 	$class."_".$subject;
+	$conc 	 = 	strtolower($class."_".$subject);
 
 
 	//check if table exit
