@@ -82,7 +82,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                             </h5>
                             <br>
 
-                            <!---  <div id="cbt">
+                            <!--- <div id="cbt">
                             </div> --->
 
                             <iframe style="padding-right: 0px; padding-left: 0px;" src="./call" class="col-sm-12"
@@ -170,6 +170,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
 
     <script>
     $(document).ready(function() {
+
         setInterval(function() {
 
             var xhr = new XMLHttpRequest();
