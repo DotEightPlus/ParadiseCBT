@@ -122,17 +122,9 @@ $data = $_GET['id'];
     <script src="vendor/daterangepicker/moment.min.js"></script>
     <script src="vendor/daterangepicker/daterangepicker.js"></script>
     <!--===============================================================================================-->
-    <script src="vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
-
     <!--===============================================================================================-->
     <script src="js/main.js"></script>
     <script src="ajax.js"></script>
-    <script>
-    var x = 0;
-    x += 1;
-    document.getElementById("demo").innerHTML = x;
-    </script>
 </body>
 
 </html>
