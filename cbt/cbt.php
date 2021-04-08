@@ -174,7 +174,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
         setInterval(function() {
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "response.php", false);
+            xhr.open("POST", "./response", false);
             xhr.send(null);
 
             document.getElementById("display").innerHTML = xhr.responseText;
