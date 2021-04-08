@@ -726,8 +726,17 @@ if (isset($_POST['sur']) && isset($_POST['nme']) && isset($_POST['sbj'])) {
 
 		$e_id 		= 	"CBT/".rand(0, 9999);
 
+			
+$det = "SELECT * from `login`";
+$resw = query($det);
+$nxt = mysqli_fetch_array($resw);
+$uve = $nxt['acesscode'];
 
-//create a table to save the echoed dataset
+if ($uve != $nme) {
+	echo "Invalid Access Code!";
+} else {
+
+	//create a table to save the echoed dataset
 $ssl = "CREATE TABLE `".$e_id."`
 (
 id INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -771,19 +780,6 @@ $result = query($sol);
 confirm($result);
     
 }
-
-
-
-
-			
-$det = "SELECT * from `login`";
-$resw = query($det);
-$nxt = mysqli_fetch_array($resw);
-$uve = $nxt['acesscode'];
-
-if ($uve != $nme) {
-	echo "Invalid Access Code!";
-} else {
 
 $sqler = "SELECT * from timer WHERE `subject` = '".$sbj."'";
 $resullt = query($sqler);
