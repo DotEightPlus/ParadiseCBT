@@ -78,8 +78,8 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                                 </div>
                             </div>
                             <br>
-                            <h5 class="text-danger "><strong>Time.: <strong id="display"></strong></strong>
-                            </h5>
+                            <!-- <h5 class="text-danger "><strong>Time.: <strong id="display"></strong></strong>
+                            </h5> --->
                             <br>
 
                             <!--- <div id="cbt">
@@ -168,7 +168,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
     <script src="ajax.js"></script>
     <!--===============================================================================================-->
 
-    <script>
+    <!--<script>
     $(document).ready(function() {
 
         setInterval(function() {
@@ -219,7 +219,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
 
         }, 1000);
     });
-    </script>
+    </script>-->
 
 </body>
 
