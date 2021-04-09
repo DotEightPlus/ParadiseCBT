@@ -24,6 +24,8 @@ $rqn = mysqli_fetch_array($rsl);
 //max attenmpts
 $max = $rqn['attempt'];
 
+$_SESSION['maxl'] = $max; 
+
 
 extract($_POST);
 extract($_GET);
@@ -94,7 +96,7 @@ if(!isset($_SESSION['qn']))
         $snl = "DROP TABLE `$e_id`";
         $frd = query($snl);
         
-        echo '<h1 align=center> You Scored.: '.$perc.'%</h1> <br/> Click the <b>End Exam button</b> above to close this exam';
+        echo '<h1 align=center> You Scored.: '.$perc.'%</h1>';
         exit;
     }
 

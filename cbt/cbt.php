@@ -266,19 +266,28 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
     ?>
 
     <script>
-    var myVar = setInterval(myTimer, 1000);
-
-    function myTimer() {
+    setInterval(function() {
         var a = document.getElementById('hours').innerHTML;
         var b = document.getElementById('minutes').innerHTML;
         var c = document.getElementById('seconds').innerHTML;
 
 
-        if (a == 00 && b == 00 && c == 00)
-            console.log('hey');
-        clearInterval(myVar);
+        if (a == 00 && b == 00 && c == 50) {
+            alert("You have less than 50seconds left");
+        } else {
+            if (a == 00 && b == 00 && c == 15) {
+                alert("You have less than 15seconds left");
+            } else {
 
-    };
+                if (a == 00 && b == 00 && c == 00) {
+                    window.location.href = './submitted';
+                }
+
+            }
+        }
+        clearInterval();
+
+    }, 1000);
     </script>
 
 </body>
