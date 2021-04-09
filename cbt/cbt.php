@@ -78,8 +78,8 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                                 </div>
                             </div>
                             <br>
-                            <!-- <h5 class="text-danger "><strong>Time.: <strong id="display"></strong></strong>
-                            </h5> --->
+                            <h5 class="text-danger "><strong>Time.: <strong id="display"></strong></strong>
+                            </h5>
                             <br>
 
                             <!--- <div id="cbt">
@@ -168,58 +168,55 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
     <script src="ajax.js"></script>
     <!--===============================================================================================-->
 
-    <!--<script>
-    $(document).ready(function() {
+    <script>
+    setInterval(function() {
 
-        setInterval(function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "response.php", true);
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "response.php", true);
-
-            xhr.onload = function() {
-                if (xhr.status == 200) {
-                    //document.write(this.responseText);
-                    document.getElementById("display").innerHTML = xhr.responseText;
-                } else {
-
-                    document.getElementById('display').innerHTML =
-                        "Your internet connection is poor";
-                }
-            }
-
-            xhr.send();
-
-
-
-
-            var hms = xhr.responseText; // your input string
-            var a = hms.split(':'); // split it at the colons
-
-            // minutes are worth 60 seconds. Hours are worth 60 minutes.
-            var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
-
-
-            //document.getElementById("display").innerHTML = seconds;
-
-
-            if (seconds == 50) {
-                //document.getElementById('id01').style.display = 'block';
-                alert("You have less than 49 minutes left");
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                //document.write(this.responseText);
+                document.getElementById("display").innerHTML = xhr.responseText;
             } else {
 
-                if (seconds == 0) {
+                document.getElementById('display').innerHTML =
+                    "Your internet connection is poor";
+            }
+        }
 
-                    clearInterval();
-                    var txt;
-                    if (alert("Your Time is up")) {
-                        txt = "You pressed OK!";
-                    }
+        xhr.send();
+
+
+
+
+        var hms = xhr.responseText; // your input string
+        var a = hms.split(':'); // split it at the colons
+
+        // minutes are worth 60 seconds. Hours are worth 60 minutes.
+        var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+
+
+        //document.getElementById("display").innerHTML = seconds;
+
+
+        if (seconds == 50) {
+            //document.getElementById('id01').style.display = 'block';
+            alert("You have less than 49 minutes left");
+        } else {
+
+            if (seconds == 0) {
+
+                clearInterval();
+                var txt;
+                if (alert("Your Time is up")) {
+                    txt = "You pressed OK!";
                 }
             }
+        }
 
-        }, 1000);
-    });
-    </script>-->
+    }, 1000);
+    </script>
 
 </body>
 
