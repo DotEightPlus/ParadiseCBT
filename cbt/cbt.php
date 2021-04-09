@@ -85,7 +85,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                             <!--- <div id="cbt">
                             </div> --->
 
-                            <iframe id="caller" style="padding-right: 0px; padding-left: 0px;" src="./calr"
+                            <iframe id="caller" style="padding-right: 0px; padding-left: 0px;" src="./call"
                                 class="col-sm-12" height="550px"></iframe>
                         </div>
 
