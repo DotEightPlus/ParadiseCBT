@@ -12,8 +12,8 @@ $differenceinseconds = $timesecond - $timefirst;
 
 $_SESSION['diff'] = $differenceinseconds;
 
-$timee = gmdate("H:i:s", $differenceinseconds);
+$timee = gmdate($differenceinseconds);
 
 echo $timee;
- 
+
 ?>

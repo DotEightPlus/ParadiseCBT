@@ -2,7 +2,23 @@
 include("../functions/init.php");
 $data     = $_SESSION['subject'];
 $e_id     = $_SESSION['examid'];
-$sur    = $_SESSION['names'];
+$sur      = $_SESSION['names'];
+
+//call database time
+$from_time1 = date('Y-m-d H:i:s');
+$to_time1   = $_SESSION["end_time"];
+
+$timefirst = strtotime($from_time1);
+$timesecond = strtotime($to_time1);
+
+$differenceinseconds = $timesecond - $timefirst;
+
+$_SESSION['diff'] = $differenceinseconds;
+
+$timee = gmdate($differenceinseconds);
+
+$a = $timee;
+
 if(!isset($data) && !isset($e_id) && !isset($sur)) {
   header("location: ./");
 }
@@ -78,8 +94,22 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                                 </div>
                             </div>
                             <br>
-                            <!-- <h5 class="text-danger "><strong>Time.: <strong id="display"></strong></strong>
-                            </h5> --->
+                            <h5 class="text-danger "><strong>Time.: &nbsp;
+
+                                    <strong id="clockdiv">
+                                        <span class="days" hidden></span>
+
+                                        <span class="hours" id="hours"></span>
+                                        :
+                                        <span class="minutes" id="minutes"></span>
+                                        :
+                                        <span class="seconds" id="seconds"></span>
+
+
+                                    </strong>
+                                </strong>
+                            </h5>
+
                             <br>
 
                             <!--- <div id="cbt">
@@ -168,55 +198,84 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
     <script src="ajax.js"></script>
     <!--===============================================================================================-->
 
-    <!--<script>
-    setInterval(function() {
+    <!---<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "./time", true);
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "response.php", true);
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            //document.write(this.responseText);
+            document.getElementById("display").innerHTML = xhr.responseText;
+        } else {
 
-            xhr.onload = function() {
-                if (xhr.status == 200) {
-                    //document.write(this.responseText);
-                    document.getElementById("display").innerHTML = xhr.responseText;
-                } else {
+            document.getElementById('display').innerHTML =
+                "Your internet connection is poor";
+        }
+    }
 
-                    document.getElementById('display').innerHTML =
-                        "Your internet connection is poor";
-                }
-            }
-
-            xhr.send();
-
-
-
-
-            var hms = xhr.responseText; // your input string
-            var a = hms.split(':'); // split it at the colons
-
-            // minutes are worth 60 seconds. Hours are worth 60 minutes.
-            var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
-
-
-            //document.getElementById("display").innerHTML = seconds;
-
-
-            if (seconds == 50) {
-                //document.getElementById('id01').style.display = 'block';
-                alert("You have less than 49 minutes left");
-            } else {
-
-                if (seconds == 0) {
-
-                    clearInterval();
-                    var txt;
-                    if (alert("Your Time is up")) {
-                        txt = "You pressed OK!";
-                    }
-                }
-            }
-
-        }, 1000);
+    xhr.send();
     </script>-->
+    <?php echo "
+    <script>
+    function getTimeRemaining(endtime) {
+        const total = Date.parse(endtime) - Date.parse(new Date());
+        const seconds = Math.floor((total / 1000) % 60);
+        const minutes = Math.floor((total / 1000 / 60) % 60);
+        const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+        return {
+            total,
+            days,
+            hours,
+            minutes,
+            seconds
+        };
+    }
+
+    function initializeClock(id, endtime) {
+        const clock = document.getElementById(id);
+        const daysSpan = clock.querySelector('.days');
+        const hoursSpan = clock.querySelector('.hours');
+        const minutesSpan = clock.querySelector('.minutes');
+        const secondsSpan = clock.querySelector('.seconds');
+
+       
+        function updateClock() {
+            const t = getTimeRemaining(endtime);
+
+            daysSpan.innerHTML = t.days;
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+               
+            }
+        
+        }
+
+        updateClock();
+        const timeinterval = setInterval(updateClock, 1000);
+    }
+
+    const deadline = new Date(Date.parse(new Date()) + 1 * 60 * 1000);
+    initializeClock('clockdiv', deadline);
+    </script>";
+    ?>
+
+    <script>
+    setInterval(function() {
+        var a = document.getElementById('hours').innerHTML;
+        var b = document.getElementById('minutes').innerHTML;
+        var c = document.getElementById('seconds').innerHTML;
+
+
+        if (a == 00 && b == 00 && c == 00)
+            console.log('hey');
+    }, 1000);
+    </script>
 
 </body>
 

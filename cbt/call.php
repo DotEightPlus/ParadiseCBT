@@ -94,7 +94,7 @@ if(!isset($_SESSION['qn']))
         $snl = "DROP TABLE `$e_id`";
         $frd = query($snl);
         
-        echo '<h1 align=center> You Scored.: '.$perc.'%</h1>';
+        echo '<h1 align=center> You Scored.: '.$perc.'%</h1> <br/> Click the <b>End Exam button</b> above to close this exam';
         exit;
     }
 
@@ -150,7 +150,7 @@ if($_SESSION['qn'] < $max-1) {
     if($_SESSION['qn'] == 0) {
 
       echo '
-      <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="skip"> Skip</button>
+      <!--<button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="skip"> Skip</button>-->
       <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="next"> Next</button>
       
       ';
@@ -158,8 +158,8 @@ if($_SESSION['qn'] < $max-1) {
     } else {
 
       echo '     
-    <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="prev"> Prev</button>
-    <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="skip"> Skip</button>
+    <!--<button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="prev"> Prev</button>--->
+    <!--<button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="skip"> Skip</button>-->
     <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="next"> Next</button>
     </div> 
       <br/>';
@@ -167,7 +167,7 @@ if($_SESSION['qn'] < $max-1) {
    } else {
       echo '
     <div class="row">
-    <button style="font-size: 20px;" type="submit" class="w3-btn w3-red"  name="prev"> Prev</button>
+    <!--<button style="font-size: 20px;" type="submit" class="w3-btn w3-red"  name="prev"> Prev</button>-->
     <button style="font-size: 20px;" type="submit" class="w3-btn w3-red"  name="submit"> Submit</button>    
     </div>
     </form>
