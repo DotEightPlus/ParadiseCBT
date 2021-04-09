@@ -85,8 +85,8 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                             <!--- <div id="cbt">
                             </div> --->
 
-                            <iframe style="padding-right: 0px; padding-left: 0px;" src="./call" class="col-sm-12"
-                                height="550px"></iframe>
+                            <iframe id="caller" style="padding-right: 0px; padding-left: 0px;" src="./calr"
+                                class="col-sm-12" height="550px"></iframe>
                         </div>
 
                     </div>
@@ -175,9 +175,21 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
 
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "./response", false);
+
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    //document.write(this.responseText);
+                    document.getElementById("display").innerHTML = xhr.responseText;
+                } else {
+
+                    document.getElementById('display').innerHTML =
+                        "Your internet connection is poor";
+                }
+            }
+
             xhr.send();
 
-            document.getElementById("display").innerHTML = xhr.responseText;
+
 
 
             var hms = xhr.responseText; // your input string
