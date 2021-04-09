@@ -266,7 +266,9 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
     ?>
 
     <script>
-    setInterval(function() {
+    var myVar = setInterval(myTimer, 1000);
+
+    function myTimer() {
         var a = document.getElementById('hours').innerHTML;
         var b = document.getElementById('minutes').innerHTML;
         var c = document.getElementById('seconds').innerHTML;
@@ -274,7 +276,9 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
 
         if (a == 00 && b == 00 && c == 00)
             console.log('hey');
-    }, 1000);
+        clearInterval(myVar);
+
+    };
     </script>
 
 </body>
