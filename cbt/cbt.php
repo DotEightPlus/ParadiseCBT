@@ -85,7 +85,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                             <!--- <div id="cbt">
                             </div> --->
 
-                            <iframe id="caller" style="padding-right: 0px; padding-left: 0px;" src="./call"
+                            <iframe id="caller" style="padding-right: 0px; padding-left: 0px;" src="call.php"
                                 class="col-sm-12" height="550px"></iframe>
                         </div>
 
@@ -164,7 +164,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
     <!--===============================================================================================-->
     <script src="vendor/daterangepicker/moment.min.js"></script>
     <script src="vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
+    <!--==============================================================================================-->
     <script src="ajax.js"></script>
     <!--===============================================================================================-->
 
@@ -174,7 +174,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
         setInterval(function() {
 
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "./response", false);
+            xhr.open("GET", "response.php", true);
 
             xhr.onload = function() {
                 if (xhr.status == 200) {
