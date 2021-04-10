@@ -294,7 +294,7 @@ confirm($result);
         const timeinterval = setInterval(updateClock, 1000);
     }
 
-    const deadline = new Date(Date.parse(new Date()) + ".$a." * 60 * 1000);
+    const deadline = new Date(Date.parse(new Date()) + 60 * 60 * 1000);
     initializeClock('clockdiv', deadline);
     </script>";
     ?>
