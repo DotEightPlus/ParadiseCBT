@@ -66,7 +66,6 @@ $(document).ready(function () {
     window.location.href = "./startcbt?id=" + cbbr;
   });
 
-
   //time up button
   $("#timeup").click(function () {
     var timeup = $("#yours").val();
@@ -75,7 +74,7 @@ $(document).ready(function () {
     $.ajax({
       type: "post",
       url: "call.php",
-      data: {timeup:timeup},
+      data: { timeup: timeup },
       success: function (data) {
         $("#msg").html(data);
       },

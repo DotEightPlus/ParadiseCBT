@@ -736,50 +736,7 @@ if ($uve != $nme) {
 	echo "Invalid Access Code!";
 } else {
 
-	//create a table to save the echoed dataset
-$ssl = "CREATE TABLE `".$e_id."`
-(
-id INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-sn text(255),
-question text(255),
-oa text(255),
-ob text(255),
-oc text(255),
-od text(255),
-correct text(255),
-userans text(255)
-)";
-$resul = query($ssl);
-confirm($resul);
 
-
-
-
-//display and random values from db
-$spl = "SELECT * FROM  `".$sbj."` GROUP BY `question` ORDER BY RAND()"; 
-$rpsult = query($spl);
-while($row = mysqli_fetch_array($rpsult)) {
-    
-    //echo $row['question']."<br>";
-    
-
-    //set the result to a variable
-    $b = $row['sn'];
-    $c = $row['question'];
-    $d = $row['oa'];
-    $e = $row['ob'];
-    $f = $row['oc'];
-    $g = $row['od'];
-    $h = $row['correct'];
-
-
-//insert into virtual table
-$sol = "INSERT INTO `".$e_id."`(`sn`, `question`, `oa`, `ob`, `oc`, `od`, `correct`)";
-$sol.= " VALUES('$b', '$c', '$d', '$e', '$f', '$g', '$h')";
-$result = query($sol);
-confirm($result);
-    
-}
 
 $sqler = "SELECT * from timer WHERE `subject` = '".$sbj."'";
 $resullt = query($sqler);
@@ -816,7 +773,7 @@ $min   =  $row_counted['min'];
 
 			
 
-			echo "Loading... Please wait";
+			echo "Loading... Please wait <br/> Make sure you have a strong internet connection";
 			$_SESSION['subject'] = $sbj;
 			$_SESSION['examid']  = $e_id;
 			$_SESSION['names']   = $sur;

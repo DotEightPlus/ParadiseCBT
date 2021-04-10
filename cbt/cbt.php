@@ -21,6 +21,52 @@ $a = $timee;
 
 if(!isset($data) && !isset($e_id) && !isset($sur)) {
   header("location: ./");
+} else {
+
+    //create a table to save the echoed dataset
+$ssl = "CREATE TABLE `".$e_id."`
+(
+id INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+sn text(255),
+question text(255),
+oa text(255),
+ob text(255),
+oc text(255),
+od text(255),
+correct text(255),
+userans text(255)
+)";
+$resul = query($ssl);
+confirm($resul);
+
+
+
+
+//display and random values from db
+$spl = "SELECT * FROM  `".$data."` GROUP BY `question` ORDER BY RAND()"; 
+$rpsult = query($spl);
+while($row = mysqli_fetch_array($rpsult)) {
+    
+    //echo $row['question']."<br>";
+    
+
+    //set the result to a variable
+    $b = $row['sn'];
+    $c = $row['question'];
+    $d = $row['oa'];
+    $e = $row['ob'];
+    $f = $row['oc'];
+    $g = $row['od'];
+    $h = $row['correct'];
+
+
+//insert into virtual table
+$sol = "INSERT INTO `".$e_id."`(`sn`, `question`, `oa`, `ob`, `oc`, `od`, `correct`)";
+$sol.= " VALUES('$b', '$c', '$d', '$e', '$f', '$g', '$h')";
+$result = query($sol);
+confirm($result);
+    
+}
 }
  ?>
 <!DOCTYPE html>
@@ -61,6 +107,18 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
+<style>
+.blink_me {
+
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+</style>
 
 <body>
 
@@ -115,7 +173,13 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
                             <!--- <div id="cbt">
                             </div> --->
 
-                            <iframe id="caller" style="padding-right: 0px; padding-left: 0px;" src="call.php"
+                            <strong>
+                                <p class="blink_me" id="id01" style="color: red;"></p>
+                            </strong>
+
+                            <br>
+
+                            <iframe id="caller" style="padding-right: 0px; padding-left: 0px;" src="cll.php"
                                 class="col-sm-12" height="550px"></iframe>
                         </div>
 
@@ -132,53 +196,23 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
 
 
 
-
     <!-- Modal timing -->
-    <div id="modalt" class="modal fade" role="dialog">
+    <div id="ido1" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">YOUR TIME IS ALMOST UP</h4>
-                </div>
+            <div style="background: #E9ECEF;" class="modal-content modal-centered">
+
                 <div class="modal-body">
-                    <p>You have less than 40 seconds left to complete this test</p>
+                    <h4 class="modal-title text-black">Time Up</h4>
+                    <a href="./submitted"><button type="button" class="btn btn-primary">Submit Exam</button></a>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                        onclick="document.=getElementById('id01').style.display='none'"
-                        data-dismiss="modal">Continue</button>
-                </div>
+
             </div>
 
         </div>
     </div>
 
-
-
-    <!-- Modal time up -->
-    <div id="id02" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">YOUR TIME IS UP/h4>
-                </div>
-                <div class="modal-body">
-                    <p>Opps! Your time is up.</p>
-                </div>
-                <div class="modal-footer">
-                    <p id="yours" hidden><?php echo $e_id?></p>
-                    <button type="submit" id="timeup" class="btn btn-default">Submit</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
 
 
@@ -272,15 +306,18 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
         var c = document.getElementById('seconds').innerHTML;
 
 
-        if (a == 00 && b == 00 && c == 50) {
-            alert("You have less than 50seconds left");
+        if (a == 00 && b == 01 && c == 00) {
+            document.getElementById('id01').innerHTML = 'Less than 1 minutes remaining';
         } else {
-            if (a == 00 && b == 00 && c == 15) {
-                alert("You have less than 15seconds left");
+            if (a == 00 && b == 00 && c == 20) {
+                document.getElementById('id01').innerHTML = 'Less than 20 seconds remaining';
             } else {
 
                 if (a == 00 && b == 00 && c == 00) {
-                    window.location.href = './submitted';
+                    $("#ido1").modal({
+                        backdrop: "static"
+                    });
+                    clearInterval();
                 }
 
             }
