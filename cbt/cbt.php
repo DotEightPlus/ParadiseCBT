@@ -179,7 +179,7 @@ confirm($result);
 
                             <br>
 
-                            <iframe id="caller" style="padding-right: 0px; padding-left: 0px;" src="cll.php"
+                            <iframe id="caller" style="padding-right: 0px; padding-left: 0px;" src="call.php"
                                 class="col-sm-12" height="550px"></iframe>
                         </div>
 
@@ -294,7 +294,7 @@ confirm($result);
         const timeinterval = setInterval(updateClock, 1000);
     }
 
-    const deadline = new Date(Date.parse(new Date()) + 1 * 60 * 1000);
+    const deadline = new Date(Date.parse(new Date()) + ".$a." * 60 * 1000);
     initializeClock('clockdiv', deadline);
     </script>";
     ?>
