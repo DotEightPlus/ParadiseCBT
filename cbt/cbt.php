@@ -4,20 +4,16 @@ $data     = $_SESSION['subject'];
 $e_id     = $_SESSION['examid'];
 $sur      = $_SESSION['names'];
 
-//call database time
-$from_time1 = date('Y-m-d H:i:s');
-$to_time1   = $_SESSION["end_time"];
+$sl = "SELECT * FROM timer WHERE `subject` = '$data'";
+$rdl = query($sl);
+$rdw = mysqli_fetch_array($rdl);
 
-$timefirst = strtotime($from_time1);
-$timesecond = strtotime($to_time1);
+$a = $rdw['hour'];
+$b = $rdw['min'];
 
-$differenceinseconds = $timesecond - $timefirst;
+//convert hour to minutes
+$a = $a * 60 + $b;
 
-$_SESSION['diff'] = $differenceinseconds;
-
-$timee = gmdate($differenceinseconds);
-
-$a = $timee;
 
 if(!isset($data) && !isset($e_id) && !isset($sur)) {
   header("location: ./");
@@ -294,7 +290,7 @@ confirm($result);
         const timeinterval = setInterval(updateClock, 1000);
     }
 
-    const deadline = new Date(Date.parse(new Date()) + 60 * 60 * 1000);
+    const deadline = new Date(Date.parse(new Date()) + ".$a." * 60 * 1000);
     initializeClock('clockdiv', deadline);
     </script>";
     ?>

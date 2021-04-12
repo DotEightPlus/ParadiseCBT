@@ -106,13 +106,13 @@ if(!isset($_SESSION['qn']))
        {
         
         mysqli_data_seek($result_set,$_SESSION['qn']);
-        //$row = mysqli_fetch_array($result_set);  
+        $row = mysqli_fetch_array($result_set);
+        
+        $_SESSION['cocc']  = 1;
       
            $_SESSION['qn'] = $_SESSION['qn']-1;
 
            $sn = $_SESSION['qn'];
-
-          
      
  }
 
@@ -126,7 +126,10 @@ $row = mysqli_fetch_array($result_set);
 $sn = $_SESSION['qn'] + 1;
 
 
-echo '
+if(!isset($_SESSION['cocc'])) {
+
+
+  echo '
 
   <form method="POST">
     <p style="font-size: 20px; color: black;">'.$sn." of ".$max.'. <b>'.ucfirst($row['question']).'</b></p>
@@ -138,6 +141,61 @@ echo '
 
   <input type="text" name="usrans" value="'.$row['id'].'" hidden>
 </div>';
+
+
+
+} else {
+
+  echo '
+
+  <form method="POST">
+    <p style="font-size: 20px; color: black;">'.$sn." of ".$max.'. <b>'.ucfirst($row['question']).'</b></p>
+    <div style="font-size: 22px; color: black;">';
+
+    //chck for radio on
+
+    if($row['oa'] === $row['userans']) {
+
+      echo 'A. <input type="radio" name="ans" value="'.$row['oa'].'" checked> '.ucfirst($row['oa']).'<br>';
+    } else {
+
+      echo 'A. <input type="radio" name="ans" value="'.$row['oa'].'"> '.ucfirst($row['oa']).'<br>';
+    }
+
+    if($row['ob'] === $row['userans']) {
+
+      echo 'B. <input type="radio" name="ans" value="'.$row['ob'].'" checked> '.ucfirst($row['ob']).'<br>';
+    } else {
+
+      echo 'B. <input type="radio" name="ans" value="'.$row['ob'].'"> '.ucfirst($row['ob']).'<br>';
+    }
+  
+    if($row['oc'] === $row['userans']) {
+
+      echo 'C. <input type="radio" name="ans" value="'.$row['oc'].'" checked> '.ucfirst($row['oc']).'<br>';
+    } else {
+
+      echo 'C. <input type="radio" name="ans" value="'.$row['oc'].'"> '.ucfirst($row['oc']).'<br>';
+    }
+  
+    if($row['od'] === $row['userans']) {
+
+      echo ' 
+      D.  <input type="radio" name="ans" value="'.$row['od'].'" checked> '.ucfirst($row['od']).'<br><br/>';
+    } else {
+
+      echo ' 
+      D.  <input type="radio" name="ans" value="'.$row['od'].'"> '.ucfirst($row['od']).'<br><br/>';
+    }
+ 
+
+  echo '<input type="text" name="usrans" value="'.$row['id'].'" hidden>
+</div>';
+
+//unset($_SESSION['cocc']);
+  
+  
+}
 
 
 //get total number of questions answered by users
@@ -152,7 +210,7 @@ if($_SESSION['qn'] < $max-1) {
     if($_SESSION['qn'] == 0) {
 
       echo '
-      <!--<button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="skip"> Skip</button>-->
+      <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="skip"> Skip</button>
       <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="next"> Next</button>
       
       ';
@@ -160,8 +218,8 @@ if($_SESSION['qn'] < $max-1) {
     } else {
 
       echo '     
-    <!--<button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="prev"> Prev</button>--->
-    <!--<button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="skip"> Skip</button>-->
+    <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="prev"> Prev</button>
+    <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="skip"> Skip</button>
     <button style="font-size: 20px;" type="submit"  class="w3-btn w3-red"  name="next"> Next</button>
     </div> 
       <br/>';
@@ -169,7 +227,7 @@ if($_SESSION['qn'] < $max-1) {
    } else {
       echo '
     <div class="row">
-    <!--<button style="font-size: 20px;" type="submit" class="w3-btn w3-red"  name="prev"> Prev</button>-->
+    <button style="font-size: 20px;" type="submit" class="w3-btn w3-red"  name="prev"> Prev</button>
     <button style="font-size: 20px;" type="submit" class="w3-btn w3-red"  name="submit"> Submit</button>    
     </div>
     </form>
