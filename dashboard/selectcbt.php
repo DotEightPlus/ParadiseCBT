@@ -8,43 +8,43 @@ if(!isset($_SESSION['cbt'])) {
 <?php include("includes/sidebar.php"); ?>
 
 <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Start Computer Based Test</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="./">Dashboard</a></li>
-              <li class="breadcrumb-item active">Delete subject</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Start Computer Based Test</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="./">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Delete subject</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
 
 
- <!-- Main content -->
+    <!-- Main content -->
     <section class="content">
-          <!-- right column -->
-          <div class="col-md-12">
+        <!-- right column -->
+        <div class="col-md-12">
             <!-- general form elements disabled -->
             <div class="card card-warning">
-              <div class="card-header">
-                <h3 class="card-title"></h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <form role="form"> 
+                <div class="card-header">
+                    <h3 class="card-title"></h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <form role="form">
 
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Select CBT Subject .:</label>
-                        <select id="cbt" class="form-control">
-                          <?php
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Select CBT Subject .:</label>
+                            <select id="cbt" class="form-control">
+                                <?php
 $sql = "SHOW TABLES";
 $result = query($sql);
 while ($row = mysqli_fetch_row($result)) {
@@ -59,42 +59,42 @@ while ($row = mysqli_fetch_row($result)) {
             </ul>
             ';
   } else {
-          ?>  
-                          <option id="cbt"><?php echo $row[0] ?></option>
-                           <?php
+          ?>
+                                <option id="cbt"><?php echo $row[0] ?></option>
+                                <?php
           }
         }
           ?>
-                        </select>
-                      </div>
+                            </select>
+                        </div>
 
-                      <button type="button" id="startcbt" class="btn btn-danger btn-outline-light">Start CBT</button>
-                </form>
-              </div>
-              <!-- /.card-body -->
+                        <button type="button" id="startcbt" class="btn btn-danger btn-outline-light">Start CBT</button>
+                    </form>
+                </div>
+                <!-- /.card-body -->
             </div>
             <!-- /.card -->
             <!-- general form elements disabled -->
-           
-          </div>
-          <!--/.col (right) -->
+
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+        <!--/.col (right) -->
+</div>
+<!-- /.row -->
+</div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
 
 
 
-      </div>
-  <!-- /.content-wrapper -->
- <?php include("includes/footer.php"); ?>
+</div>
+<!-- /.content-wrapper -->
+<?php include("includes/footer.php"); ?>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -105,7 +105,7 @@ while ($row = mysqli_fetch_row($result)) {
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+$.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -135,8 +135,8 @@ while ($row = mysqli_fetch_row($result)) {
 <script src="dist/js/demo.js"></script>
 <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function () {
-  bsCustomFileInput.init();
+$(document).ready(function() {
+    bsCustomFileInput.init();
 });
 </script>
 <script src="ajax.js"></script>
@@ -145,15 +145,14 @@ $(document).ready(function () {
 <!-- Toastr -->
 <script src="plugins/toastr/toastr.min.js"></script>
 <script type="text/javascript">
-  $(function() {
+$(function() {
     const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 3000
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
     });
-  });
-
+});
 </script>
 
 <!--notification for deleted-->
@@ -164,4 +163,5 @@ if(isset($_GET['id'])) {
 }
 ?>
 </body>
+
 </html>

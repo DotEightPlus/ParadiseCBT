@@ -73,11 +73,6 @@ $data = $_GET['id'];
                             data-toggle="tooltip" title="Reset this subject" class="btn btn-tool"><i
                                 class="fas fa-recycle"></i>
                         </button>
-                        <button type="button" id="del" data-toggle="modal" data-target="#modal-view"
-                            data-toggle="tooltip"
-                            title="View Time allowed, Number of Questions to be attempted and Instructions "
-                            class="btn btn-tool"><i class="fas fa-clock"></i>
-                        </button>
                         <button type="button" id="del" data-toggle="modal" data-target="#modal-edit"
                             data-toggle="tooltip" title="Edit Time allowed, Questions to be attempted and Instructions"
                             class="btn btn-tool"><i class="fas fa-pen"></i>
@@ -339,60 +334,34 @@ $data = $_GET['id'];
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="exampleInputPassword1">Time Allowed - Hours .:</label>
-                            <select id="hourc" class="form-control">
-                                <?php
-                        $x = 0;
+                            <label for="exampleInputPassword1">Prev. Hour(s) Allowed</label>
+                            <input type="number" placeholder="" value="<?php echo $timer ?>" id="hourc"
+                                class="form-control" required>
 
-                        while($x <= 24) {
-                            echo '
-
-   
-                          <option style="font-size: 20px" id="hour">'.$x.' </option>
-                       
-
-                          <br>';
-                          $x++;
-                      }
-                      ?>
-
-                            </select>
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label for="exampleInputPassword1">Time Allowed - Minutes .:</label>
-                            <select id="minutesc" value="<?php echo $attempt; ?>" class="form-control">
-                                <?php
-                        $x = 0;
+                            <label for="exampleInputPassword1">Prev. Minute(s) Allowed
+                            </label>
+                            <input type="number" placeholder="" value="<?php echo $minutes ?>" id="minutesc"
+                                class="form-control" required>
 
-                        while($x <= 60) {
-                            echo '
 
-   
-                          <option style="font-size: 20px" id="minutes">'.$x.' </option>
-                       
-
-                          <br>';
-                          $x++;
-                      }
-                      ?>
-
-                            </select>
                         </div>
 
                         <!------>
                         <div class="form-group col-md-4">
                             <label for="exampleInputPassword1">Questions to be attempted .:</label>
-                            <input type="number" placeholder="" value="1" id="quessc" name="quess" class="form-control"
-                                required>
+                            <input type="number" placeholder="" value="<?php echo $attempt ?>" id="quessc" name="quess"
+                                class="form-control" required>
                             <input type="text" value="<?php echo $data; ?>" id="idc" name="" hidden>
                         </div>
-                        <div>
+                        <div class="col-12">
 
                             <label for="exampleInputPassword1">Instructions to Students .:</label>
                             <textarea class="textarea" name="det" id='editc'
-                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
-                                required></textarea>
+                                style="width: 100%; height: 200px; font-size: 14px;"
+                                required><?php echo $instruct; ?></textarea>
                             <!-- Summernote -->
 
                         </div>
@@ -411,115 +380,80 @@ $data = $_GET['id'];
 </div>
 <!-- /.modal -->
 
-<!---modal view--->
-<div class="modal fade" id="modal-view">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content bg-white">
-
-            <div class="modal-body">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="form-group col-12">
-                            <h4><b>Time allowed</b> .: <?php echo $timer."Hours : ".$minutes."Minutes"; ?></h4>
-                            <hr>
-                        </div>
-
-                        <!------>
-                        <div class="form-group col-12">
-                            <h4><b>No. of questions to be attempted</b>.: <?php echo $attempt. " Questions"; ?></h4>
-                            <hr>
-                        </div>
-
-                        <div class="form-group col-12">
-                            <h4 class="text-center"><b>Instructions</b> <br>
-                                <hr>
-                                <span class="float-left"><?php echo $instruct; ?></span>
-                            </h4>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
 
 
 
-    <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-    $.widget.bridge('uibutton', $.ui.button)
-    </script>
-    <!-- Bootstrap 4 -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- ChartJS -->
-    <script src="plugins/chart.js/Chart.min.js"></script>
-    <!-- Sparkline -->
-    <script src="plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-    <!-- daterangepicker -->
-    <script src="plugins/moment/moment.min.js"></script>
-    <script src="plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- DataTables -->
-    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Summernote -->
-    <script src="plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
-    <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        bsCustomFileInput.init();
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+$.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- DataTables -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    bsCustomFileInput.init();
+});
+</script>
+<script src="ajax.js"></script>
+<!-- SweetAlert2 -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="plugins/toastr/toastr.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
     });
-    </script>
-    <script src="ajax.js"></script>
-    <!-- SweetAlert2 -->
-    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
-    <!-- Toastr -->
-    <script src="plugins/toastr/toastr.min.js"></script>
-    <script type="text/javascript">
-    $(function() {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000
-        });
-    });
-    </script>
+});
+</script>
 
-    <!--notification for deleted-->
-    <?php
+<!--notification for deleted-->
+<?php
 if(isset($_GET['del'])) {
   $deleted = $_GET['del'];
   echo "<script>$(toastr.error('Question Deleted Successfully'));</script>";
 }
 ?>
 
-    <!--notification for upload question-->
-    <?php
+<!--notification for upload question-->
+<?php
 if(isset($_GET['quest'])) {
   $ques = $_GET['quest'];
   echo "<script>$(toastr.error('Question Uploaded Successfully'));</script>";
@@ -527,8 +461,8 @@ if(isset($_GET['quest'])) {
 ?>
 
 
-    <!--notification for reset question-->
-    <?php
+<!--notification for reset question-->
+<?php
 if(isset($_GET['res'])) {
   $res = $_GET['res'];
   echo "<script>$(toastr.error('Question(s) Resetted Successfully'));</script>";
@@ -540,20 +474,20 @@ if(isset($_GET['res'])) {
 
 
 
-    <!-- page script -->
-    <script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "autoWidth": true,
-            "paging": true,
-            "lengthChange": true,
-            "searching": true,
-            "ordering": true,
-            "info": true,
-        });
+<!-- page script -->
+<script>
+$(function() {
+    $("#example1").DataTable({
+        "responsive": true,
+        "autoWidth": true,
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
     });
-    </script>
-    </body>
+});
+</script>
+</body>
 
-    </html>
+</html>

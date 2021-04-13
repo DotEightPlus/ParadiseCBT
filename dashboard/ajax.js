@@ -366,7 +366,7 @@ $(document).ready(function()
 	{
 		var cbt 	 = $("#cbt").val();
 		$(toastr.error('Loading Please wait...'));
-		window.location.href = "../cbt/./startcbt?id="+cbt;	
+		window.location.href = "../cbt/./instruct?id="+cbt;	
 })
 })
 

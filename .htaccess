@@ -1,5 +1,5 @@
-#ErrorDocument 404  https://icbt.paradisemodelschool.com.ng/404
-ErrorDocument 404  http://localhost/paradiseCBT/404
+ErrorDocument 404  https://icbt.paradisemodelschool.com.ng/404
+#ErrorDocument 404  http://localhost/paradiseCBT/404
 
 RewriteEngine on 
 RewriteCond %{REQUEST_FILENAME} !-d
