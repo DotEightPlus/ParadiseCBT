@@ -35,7 +35,7 @@ extract($_SESSION);
 if(!isset($_SESSION['qn']))
 {
   $_SESSION['qn'] = 0;
-  $_SESSION['trueans'] = 0;
+  //$_SESSION['trueans'] = 0;
   
 } else {
 
@@ -51,11 +51,22 @@ if(!isset($_SESSION['qn']))
      //save user answer
      $save = "UPDATE `$e_id` SET `userans` = '$ansr' WHERE `id` = '$idns'";
      $svrl = query($save);
+     
       
      if($_POST['ans'] == $row['correct'])
      {
-      $_SESSION['trueans'] = $_SESSION['trueans']+1;
+       //scored the user
+     $save = "UPDATE `$e_id` SET `score` = 1 WHERE `id` = '$idns'";
+     $svrl = query($save);
+     
+     // $_SESSION['trueans'] = $_SESSION['trueans']+1;
+     } else {
+
+     //do not score the user 
+     $save = "UPDATE `$e_id` SET `score` = 0 WHERE `id` = '$idns'";
+     $svrl = query($save);
      }
+     
      $_SESSION['qn'] = $_SESSION['qn']+1;
      
     }
@@ -73,16 +84,36 @@ if(!isset($_SESSION['qn']))
 
 
     //submit question
-    if(isset($_POST['submit'])=='Submit' && isset($_POST['ans']))
+    if(isset($_POST['submit'])=='Submit' && isset($_POST['ans']) && isset($_POST['usrans']))
     {
         mysqli_data_seek($result_set,$_SESSION['qn']);
         $rower = mysqli_fetch_array($result_set);  
+
+        $ansr = $_POST['ans'];
+        $idns = $_POST['usrans'];
+
         if($_POST['ans'] == $rower['correct'])
         {
-              $_SESSION['trueans'] = $_SESSION['trueans']+1;
+          //scored the user
+        $save = "UPDATE `$e_id` SET `score` = 1 WHERE `id` = '$idns'";
+        $svrl = query($save);
+        
+        // $_SESSION['trueans'] = $_SESSION['trueans']+1;
+        } else {
+   
+        //do not score the user 
+        $save = "UPDATE `$e_id` SET `score` = 0 WHERE `id` = '$idns'";
+        $svrl = query($save);
         }
 
-        $sc = $_SESSION['trueans'];
+
+        //get the total score of the 
+        
+        $score = "SELECT sum(score) AS scored  FROM `$e_id`";
+        $rsd   = query($score);
+        $roww  = mysqli_fetch_array($rsd);
+
+        $sc = $roww['scored'];
         cbtexam();
         
         //calculate the percentage of user score
@@ -101,7 +132,7 @@ if(!isset($_SESSION['qn']))
     }
 
 
-       //previous question
+       //previous question without ans
        if(isset($_POST['prev']) =='Prev')
        {
         
@@ -113,8 +144,59 @@ if(!isset($_SESSION['qn']))
            $_SESSION['qn'] = $_SESSION['qn']-1;
 
            $sn = $_SESSION['qn'];
+           
      
  }
+
+
+
+ //if previous is clicked and an answer is set
+
+
+ //previous question with ans
+ if(isset($_POST['prev']) =='Prev' && isset($_POST['ans']) && isset($_POST['usrans']))
+ {
+  
+  mysqli_data_seek($result_set,$_SESSION['qn']);
+  $row = mysqli_fetch_array($result_set);
+  
+  $_SESSION['cocc']  = 1;
+
+     $ansr = $_POST['ans'];
+     $idns = $_POST['usrans'];
+
+     //save user answer
+     $save = "UPDATE `$e_id` SET `userans` = '$ansr' WHERE `id` = '$idns'";
+     $svrl = query($save);
+      
+     /**if($_POST['ans'] == $row['correct'])
+     {
+      $_SESSION['trueans'] = $_SESSION['trueans']+1;
+     } else {
+
+      $_SESSION['trueans'] = $_SESSION['trueans']-1;
+      
+     }***/
+
+     if($_POST['ans'] == $row['correct'])
+     {
+       //scored the user
+     $save = "UPDATE `$e_id` SET `score` = 1 WHERE `id` = '$idns'";
+     $svrl = query($save);
+     
+     // $_SESSION['trueans'] = $_SESSION['trueans']+1;
+     } else {
+
+     //do not score the user 
+     $save = "UPDATE `$e_id` SET `score` = 0 WHERE `id` = '$idns'";
+     $svrl = query($save);
+     }
+     
+     //$_SESSION['qn'] = $_SESSION['qn']-1;
+     //$sn = $_SESSION['qn'];    
+     
+
+}
 
 }
 
@@ -192,7 +274,7 @@ if(!isset($_SESSION['cocc'])) {
   echo '<input type="text" name="usrans" value="'.$row['id'].'" hidden>
 </div>';
 
-//unset($_SESSION['cocc']);
+  //unset($_SESSION['cocc']);
   
   
 }

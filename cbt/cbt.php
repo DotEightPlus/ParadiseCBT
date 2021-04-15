@@ -30,7 +30,8 @@ ob text(255),
 oc text(255),
 od text(255),
 correct text(255),
-userans text(255)
+userans text(255),
+score text(255)
 )";
 $resul = query($ssl);
 confirm($resul);

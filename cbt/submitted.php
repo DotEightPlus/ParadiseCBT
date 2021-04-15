@@ -7,7 +7,13 @@ include("../functions/init.php");
 $e_id = $_SESSION['examid'];
 
 $max = $_SESSION['maxl'];
-$sc  = $_SESSION['trueans'];
+
+$score = "SELECT sum(score) AS scored  FROM `$e_id`";
+$rsd   = query($score);
+$roww  = mysqli_fetch_array($rsd);
+
+$sc  = $roww['scored'];
+
 //calculate the percentage of user score
 $perc = ($sc/$max) * 100;
 
