@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>De Guide Light Schools</title>
+	<title>DotEightPlus | CBT Demo</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="symbol-01.jpg"/>
+	<link rel="icon" type="image/png" href="logo.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -34,7 +34,7 @@
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<span class="contact100-form-symbol">
-				<img src="symbol-01.jpg" alt="SYMBOL-MAIL">
+				<img src="logo.png" alt="DotEightPlus Logo">
 			</span>
 
 			
@@ -53,7 +53,7 @@
 					</div>
 				
 <br/>
-			<p align="center">&copy; De Guide Light School <?php echo date("Y"); ?> | Developed by:<span style="color: red;"> DotEightInc.</span> </p>
+			<p align="center">&copy; CBT Demo <?php echo date("Y"); ?> | Developed by:<span style="color: red;"> DotEightplus</span> </p>
 		</div>
 
 	</div>

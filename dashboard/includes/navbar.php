@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Paradise Model School | Computer Based Test</title>
+    <title>DotEightPlus | Computer Based Test</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <link rel="icon" type="image/png" href="../logo.jpg" />
+    <link rel="icon" type="image/png" href="../logo.png" />
     <link rel="manifest" href="manifest.json">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -55,7 +55,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="nav-link">Paradise Model School School</a>
+                    <a class="nav-link">DotEightPlus</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a class="nav-link">CBT <?php echo date("Y"); ?></a>

@@ -68,12 +68,12 @@ confirm($result);
  ?>
 <!DOCTYPE html>
 <html>
-<title>Paradise Model School | CBT</title>
+<title>DotEightPlus | CBT Demo</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta charset="UTF-8">
-<meta name="description" content="Paradise Model School School | CBT">
-<meta name="keywords" content="Paradise Model School | CBT">
+<meta name="description" content="DotEightPlus | CBT Demo">
+<meta name="keywords" content="DotEightPlus | CBT Demo">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -81,7 +81,7 @@ confirm($result);
 <link rel="stylesheet" href="css/w3.css">
 
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="../logo.jpg" />
+<link rel="icon" type="image/png" href="../logo.png" />
 <link rel="manifest" href="manifest.json">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -129,7 +129,7 @@ confirm($result);
                         <div class="col-sm-4 col-lg-4">
                             <p><strong><?php echo strtoupper($data); ?></strong></p>
                             <br>
-                            <img src="../logo.jpg">
+                            <img src="../logo.png" alt="DotEightPlus Logo">
                             <br><br>
                             <p>Full Name.:<strong> <?php echo $sur ?></strong></p>
                             <p>Your Exam ID.: <strong> <?php echo $e_id?></strong></p>
@@ -209,6 +209,8 @@ confirm($result);
 
         </div>
     </div>
+
+    
 
 
 

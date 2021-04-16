@@ -53,7 +53,7 @@ if(!isset($_SESSION['cbt'])) {
                 <h5 class="m-0">Delete Subjects</h5>
               </div>
               <div class="card-body">
-                <p class="card-text">Delete a subject you don`t wish to have anymore. Contact <a href="tel: +2348103171902">DotEightInc</a> for details</p>
+                <p class="card-text">Delete a subject you don't wish to have anymore. Contact <a href="tel: +2348103171902">DotEightInc</a> for details</p>
                 <a href="./deletesubject" class="btn btn-primary">Delete Subjects</a>
               </div>
             </div>

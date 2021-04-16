@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="./" class="brand-link">
-        <img style="width: 40px; height: 40px;" src="../logo.jpg" alt="De-Guide Light School"
+        <img style="width: 40px; height: 40px;" src="../logo.png" alt="DotEightPlus Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
         <?php 
                     $date     = date("Y");

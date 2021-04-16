@@ -14,18 +14,18 @@ $row = mysqli_fetch_array($rsl);
 <html lang="en">
 
 <head>
-    <title>Paradise Model School | CBT</title>
+    <title>DotEightPlus | CBT Demo</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
-    <meta name="description" content="Paradise Model School School | CBT">
-    <meta name="keywords" content="Paradise Model School | CBT">
+    <meta name="description" content="DotEightPlus | CBT Demo">
+    <meta name="keywords" content="DotEightPlus | CBT Demo">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="theme-color" content="#ffffff">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="../logo.jpg" />
+    <link rel="icon" type="image/png" href="../logo.png" />
     <link rel="manifest" href="manifest.json">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -55,7 +55,7 @@ $row = mysqli_fetch_array($rsl);
     <div class="container-contact100">
         <div class="wrap-contact100">
             <span class="contact100-form-symbol">
-                <img src="../logo.jpg" alt="">
+                <img src="../logo.png" alt="">
             </span>
 
             <p style="color: red; font-size: 20px;"><b>READ THE FOLLOWING INSTRUCTIONS CAREFULLY</b></p>
@@ -86,7 +86,7 @@ $row = mysqli_fetch_array($rsl);
             </div>
 
             <br />
-            <p align="center">&copy; Paradise Model School | <span style="color: red;"> <a style="color: red"
+            <p align="center">&copy; CBT Demo | <span style="color: red;"> <a style="color: red"
                         target="_blank" href="https://doteightplus.com"> DotEightPlus
                         <?php echo date("Y"); ?></a></span> </p>
         </div>
