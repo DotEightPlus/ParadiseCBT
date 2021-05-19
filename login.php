@@ -3,11 +3,11 @@
 <html lang="en">
 
 <head>
-    <title>DotEightPlus | CBT</title>
+    <title>De-Guide Light School  | CBT</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
-    <meta name="description" content="DotEightPlus | CBT Demo">
+    <meta name="description" content="De-Guide Light School  | CBT ">
     <meta name="keywords" content="DotEightPlus | CBT Demo">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,11 +44,11 @@
     <div class="container-contact100">
         <div class="wrap-contact100">
             <span class="contact100-form-symbol">
-                <img src="logo.png" alt="DotEightInc - CBT Demo">
+                <img src="logo.png" alt="DotEightPlus - CBT">
             </span>
             <form method="post" class="contact100-form validate-form flex-sb flex-w">
                 <span class="contact100-form-title">
-                    CBT Demo <?php echo date("Y"); ?>
+                De-Guide Light School <?php echo date("Y"); ?>
                 </span>
                 <p style="color: red">Please login to continue. Kindly contact the database administrator for login
                     details.</p>
@@ -70,7 +70,7 @@
                 </div>
             </form>
             <br />
-            <p align="center">&copy; CBT Demo <?php echo date("Y"); ?> | Developed by: <a target="_blank"
+            <p align="center">&copy; De-Guide Light School CBT <?php echo date("Y"); ?> | Developed by: <a target="_blank"
                     href="https://doteightplus.com"><span style="color: red;"> DotEightPlus</span> </p>
         </div>
 

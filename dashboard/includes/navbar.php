@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>DotEightPlus | Computer Based Test</title>
+    <title>De-Guide Light School | Computer Based Test</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
-    <meta name="description" content="De-Guide Light School | Computer Based Test">
+    <meta name="description" content="De-Guide Light School  | Computer Based Test">
     <meta name="keywords" content="De-Guide Light School | Computer Based Test">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +55,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="nav-link">DotEightPlus</a>
+                    <a class="nav-link">De-Guide Light School </a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a class="nav-link">CBT <?php echo date("Y"); ?></a>

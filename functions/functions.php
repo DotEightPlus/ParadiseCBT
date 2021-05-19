@@ -332,7 +332,7 @@ confirm($result);
 //time allowed
 
 $sqll = "INSERT INTO timer(`subject`, `hour`, `min`, `attempt`, `instruct`)";
-$sqll.= " VALUES('$conc', '$jsshour', '$jssminutes', '$jssquess', 'jssedit')";
+$sqll.= " VALUES('$conc', '$jsshour', '$jssminutes', '$jssquess', '$jssedit')";
 $resullt = query($sqll);
 confirm($resullt);
 

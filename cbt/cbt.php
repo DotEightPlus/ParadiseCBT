@@ -68,12 +68,12 @@ confirm($result);
  ?>
 <!DOCTYPE html>
 <html>
-<title>DotEightPlus | CBT Demo</title>
+<title>Daglore Model School | CBT</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta charset="UTF-8">
-<meta name="description" content="DotEightPlus | CBT Demo">
-<meta name="keywords" content="DotEightPlus | CBT Demo">
+<meta name="description" content="Daglore Model School  | CBT">
+<meta name="keywords" content="Daglore Model School  | CBT">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -129,7 +129,7 @@ confirm($result);
                         <div class="col-sm-4 col-lg-4">
                             <p><strong><?php echo strtoupper($data); ?></strong></p>
                             <br>
-                            <img src="../logo.png" alt="DotEightPlus Logo">
+                            <img src="../logo.png" style="height: 150px" alt="DotEightPlus Logo">
                             <br><br>
                             <p>Full Name.:<strong> <?php echo $sur ?></strong></p>
                             <p>Your Exam ID.: <strong> <?php echo $e_id?></strong></p>
@@ -183,7 +183,7 @@ confirm($result);
                     </div>
 
                 </div>
-                <p align="center">&copy; Paradise Model School | <span style="color: red;"> <a style="color: red"
+                <p align="center">&copy; Daglore Model School  | <span style="color: red;"> <a style="color: red"
                             target="_blank" href="https://doteightplus.com"> DotEightPlus
                             <?php echo date("Y"); ?></a></span> </p>
             </div>
