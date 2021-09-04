@@ -1,0 +1,23 @@
+{
+  "short_name": "Paradise Staff CBT",
+  "name": "Paradise Staff CBT",
+  "description": "Paradise Staff CBT",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "images/pwa.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "./?v3&utm_source=web_app_manifest",
+  "background_color": "#000",
+  "theme_color": "#000",
+  "color": "#fff",
+  "display": "minimal-ui",
+  "related_applications": [{
+    "platform": "web",
+    "orientation": "portrait",
+    "url": "https://staffcbt.paradisemodelschool.com.ng"
+  }]
+}
