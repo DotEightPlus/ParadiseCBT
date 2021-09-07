@@ -22,6 +22,8 @@ $sc  = $roww['scored'];
 //calculate the percentage of user score
 $perc = ($sc/$max) * 100;
 
+cbtexam();
+
 //save user result on submit
 $sn = "UPDATE `result` SET `score` = '$perc' WHERE stud_id = '$e_id'";
 $fn = query($sn);
